@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  margin-top:20px;
+  text-align: center;
+}
+
+h1{
+  font-weight: 700;
+  font-size:45px;
+}
