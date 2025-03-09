@@ -1,0 +1,7 @@
+.calculatorBox{
+    width: 200px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color:azure;
+    margin: 20px auto;
+}

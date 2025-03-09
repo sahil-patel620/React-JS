@@ -1,0 +1,8 @@
+.inBox{
+    margin: 10px;
+    width: 175px;
+    font-size: 25px;
+    background-color:rgb(245, 243, 240);
+    border: 1px solid grey;
+    border-radius: 5px;
+}
