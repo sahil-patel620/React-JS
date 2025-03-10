@@ -5,15 +5,19 @@ import Button from "./components/Button";
 import InputBox from "./components/InputBox";
 
 function App() {
+  
+    function handleOnClick(){
+        console.log("item Bought");
+    }
   return (
     <>
     <Container>
     <h4>Healthy Foods</h4>
     <InputBox />
     <ul className="list-group">
-      <li className="list-group-item">Dal <Button /></li>
-      <li className="list-group-item">Vegetables <Button /></li>
-      <li className="list-group-item">Fruits <Button /></li>
+      <li className="list-group-item">Dal <Button handleOnClick={handleOnClick} /></li>
+      <li className="list-group-item">Vegetables <Button  handleOnClick={handleOnClick}/></li>
+      <li className="list-group-item">Fruits <Button handleOnClick={handleOnClick} /></li>
       <li className="list-group-item">Roti <Button /></li>
       <li className="list-group-item">salad <Button /></li>
       <li className="list-group-item">Milk <Button /></li>

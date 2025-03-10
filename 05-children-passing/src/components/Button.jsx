@@ -1,10 +1,10 @@
 import styles from "./Button.module.css";
 
-function Button(){
+function Button({handleOnClick}){
 
-    function handleOnClick(){
-        console.log("item Bought");
-    }
+    // function handleOnClick(){
+    //     console.log("item Bought");
+    // }
     return <button className={styles.btn} onClick={handleOnClick}>Buy</button>
 }
 
