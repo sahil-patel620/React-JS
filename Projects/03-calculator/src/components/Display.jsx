@@ -1,7 +1,7 @@
 import styles from "./Display.module.css";
-function Display(){
+function Display({displayValue}){
     return(
-        <input type="text"  className={styles.inBox}/>
+        <input type="text" className={styles.inBox} value={displayValue} readOnly/>
     )
 }
 

@@ -1,6 +1,6 @@
-import styles from "./CustomBtn.module.css"
+import styles from "./CustomBtn.module.css";
 
-function CustomBtn() {
+function CustomBtn({ onButtonClick }) {
   const btnName = [
     "C",
     "1",
@@ -20,11 +20,18 @@ function CustomBtn() {
     "0",
     ".",
   ];
-  return(
-    <div  className={styles.btnContainer}>
-        {btnName.map((buttonName)=> (<button className={styles.btn}>{buttonName}</button>))}
+  return (
+    <div className={styles.btnContainer}>
+      {btnName.map((buttonName) => (
+        <button
+          className={styles.btn}
+          onClick={() => onButtonClick(buttonName)}
+        >
+          {buttonName}
+        </button>
+      ))}
     </div>
-  )
+  );
 }
 
 export default CustomBtn;
