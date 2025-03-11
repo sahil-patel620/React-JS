@@ -1,0 +1,8 @@
+.btn{
+    background-color:aqua ;
+    color:#010101;
+    border:1px solid black;
+    float: right;
+    border-radius: 5px;
+    cursor: pointer;
+}
