@@ -1,24 +1,29 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { useRef } from "react";
 import { BiMessageAltAdd } from "react-icons/bi";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [todoDueDate, setTodoDueDate] = useState("");
+  // const [todoName, setTodoName] = useState("");
+  // const [todoDueDate, setTodoDueDate] = useState("");
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
+  // const handleNameChange = (event) => {
+  //   setTodoName(event.target.value);
+  // };
 
-  const handleDueDateChange = (event) => {
-    setTodoDueDate(event.target.value);
-  };
+  // const handleDueDateChange = (event) => {
+  //   setTodoDueDate(event.target.value);
+  // };
+  const todoNameElement = useRef();
+  const todoDueElement = useRef();
 
   const handleAddButtonClicked = (event) => {
     event.preventDefault(); // to prevent default action of Form
+    const todoName = todoNameElement.current.value;
+    const todoDueDate = todoDueElement.current.value;
     const formattedDueDate = formatDateToIndianStyle(todoDueDate);
+    todoNameElement.current.value = "";
+    todoDueElement.current.value = "";
     onNewItem(todoName, formattedDueDate);
-    setTodoName("");
-    setTodoDueDate("");
   };
 
   // Function to convert date to Indian style (DD-MM-YYYY) using toLocaleDateString()
@@ -35,7 +40,7 @@ function AddTodo({ onNewItem }) {
     const year = today.getFullYear(); // Get full year
     const month = ("0" + (today.getMonth() + 1)).slice(-2); // Get month, ensuring two digits
     const day = ("0" + today.getDate()).slice(-2); // Get day, ensuring two digits
-    
+
     return `${year}-${month}-${day}`; // Return formatted date as string
   }
 
@@ -47,16 +52,18 @@ function AddTodo({ onNewItem }) {
         <div className="col-6">
           <input
             type="text"
-            onChange={handleNameChange}
-            value={todoName}
+            ref={todoNameElement}
+            // onChange={handleNameChange}
+            // value={todoName}
             placeholder="Enter Todo"
           />
         </div>
         <div className="col-4">
           <input
             type="date"
-            onChange={handleDueDateChange}
-            value={todoDueDate}
+            ref={todoDueElement}
+            // onChange={handleDueDateChange}
+            // value={todoDueDate}
             min={todayDate}
           />
         </div>
@@ -65,7 +72,7 @@ function AddTodo({ onNewItem }) {
             // type="submit"
             className="btn btn-success custom-btn"
           >
-           <BiMessageAltAdd/>
+            <BiMessageAltAdd />
           </button>
         </div>
       </form>

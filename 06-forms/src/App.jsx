@@ -12,8 +12,9 @@ function App() {
   ]);
 
   const handleNewItem = (itemName, itemDueDate) => {
-    const newTodoItems = [...todoItems, { name: itemName, date: itemDueDate }];
-    setTodoItems(newTodoItems);
+    // const newTodoItems = [...todoItems, { name: itemName, date: itemDueDate }];
+    
+    setTodoItems((currValue) =>[...currValue, { name: itemName, date: itemDueDate }]);
   };
 
   const handleDeleteButton = (todoItemName) =>{
