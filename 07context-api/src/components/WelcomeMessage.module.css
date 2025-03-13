@@ -1,0 +1,9 @@
+.welcome{
+    margin-top: 50px;
+    color: rgb(255, 11, 11);
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(32, 36, 54);
+    width: 200px;
+    padding: 14px;
+}
