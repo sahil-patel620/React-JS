@@ -10,8 +10,6 @@ function AddTodo() {
   //using context 
   const { addNewItem } = useContext(TodoItemContext);
 
-
-
   const handleAddButtonClicked = (event) => {
     event.preventDefault(); // to prevent default action of Form
     const todoName = todoNameElement.current.value;
