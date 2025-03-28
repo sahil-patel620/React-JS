@@ -13,7 +13,7 @@ const Post = ({ post }) => {
             className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
             onClick={() => deletePost(post.id)}
           >
-            <MdDelete />
+            <MdDelete className="delete-btn" />
           </span>
         </h5>
         <p className="card-text">{post.body}</p>
@@ -23,7 +23,7 @@ const Post = ({ post }) => {
           </span>
         ))}
         <div className="alert alert-success reaction" role="alert">
-          Likes : {post.reactions}
+          Likes: {post.reactions?.likes ?? "N/A"}
         </div>
       </div>
     </div>

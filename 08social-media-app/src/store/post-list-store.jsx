@@ -3,6 +3,7 @@ import { createContext, useReducer } from "react";
 export const PostList = createContext({
   postList: [],
   addPost: () => {},
+  addIntialPosts: () => {},
   deletePost: () => {},
 });
 
@@ -12,6 +13,8 @@ const postListReducer = (currPostList, action) => {
     newPostList = currPostList.filter(
       (post) => post.id !== action.payload.postId
     );
+  } else if (action.type === "ADD_INTIAL_POSTS") {
+    newPostList = action.payload.posts;
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currPostList];
   }
@@ -19,10 +22,7 @@ const postListReducer = (currPostList, action) => {
 };
 
 const PostListProvider = ({ children }) => {
-  const [postList, dispatchPostList] = useReducer(
-    postListReducer,
-    DEFAULT_POSTLIST
-  );
+  const [postList, dispatchPostList] = useReducer(postListReducer, []);
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
     dispatchPostList({
@@ -38,6 +38,15 @@ const PostListProvider = ({ children }) => {
     });
   };
 
+  const addIntialPosts = (posts) => {
+    dispatchPostList({
+      type: "ADD_INTIAL_POSTS",
+      payload: {
+        posts,
+      },
+    });
+  };
+
   const deletePost = (postId) => {
     dispatchPostList({
       type: "DELETE_POST",
@@ -48,28 +57,12 @@ const PostListProvider = ({ children }) => {
   };
 
   return (
-    <PostList.Provider value={{ postList, addPost, deletePost }}>
+    <PostList.Provider
+      value={{ postList, addPost, addIntialPosts, deletePost }}
+    >
       {children}
     </PostList.Provider>
   );
 };
 
-const DEFAULT_POSTLIST = [
-  {
-    id: "1",
-    title: "Going to Mumbai",
-    body: "Hi Friends, I am going to Mumbai for my vacations. I hope i will enjoy it. ",
-    reactions: "20",
-    userId: "user-9",
-    tags: ["Mumbai", "Vactions", "Enjoying"],
-  },
-  {
-    id: "2",
-    title: "Completed my Graduation",
-    body: "After enjoying 4 years, I have successfully completed my graduation.",
-    reactions: "15",
-    userId: "user-12",
-    tags: ["Graduation", "B.TECH", "Engineering"],
-  },
-];
 export default PostListProvider;

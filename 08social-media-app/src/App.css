@@ -24,8 +24,16 @@
     margin: 15px 0 0 0;
 }
 
+.delete-btn{
+    cursor: pointer;
+}
+
 .create-post{
     width: 80%;
     margin-top: 50px;
     margin-left: 10%;
+}
+
+.welcome-message{
+    margin: 100px 0;
 }
