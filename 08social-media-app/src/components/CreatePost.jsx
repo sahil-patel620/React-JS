@@ -15,7 +15,7 @@ const CreatePost = () => {
     const userId = userIdElements.current.value;
     const postTitle = postTitleElements.current.value;
     const postBody = postContentElements.current.value;
-    const reactions = reactionsElements.current.value;
+    const reactions = Number(reactionsElements.current.value) || 0; // convert user input into a number and ensure that if the conversion fails, it defaults to 0
     const tags = hashtagsElements.current.value.split(" ");
     addPost(userId, postTitle, postBody, reactions, tags);
 

@@ -23,7 +23,10 @@ const Post = ({ post }) => {
           </span>
         ))}
         <div className="alert alert-success reaction" role="alert">
-          Likes: {post.reactions?.likes ?? "N/A"}
+          Likes:
+          {typeof post.reactions === "number"
+            ? post.reactions
+            : post.reactions.likes}
         </div>
       </div>
     </div>
