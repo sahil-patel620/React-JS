@@ -10,12 +10,23 @@ const PostList = () => {
 
   useEffect(() => {
     setFetching(true);
-    fetch("https://dummyjson.com/posts")
+
+    // useEffect CleanUp
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("https://dummyjson.com/posts", { signal })
       .then((res) => res.json())
       .then((data) => {
         addIntialPosts(data.posts);
         setFetching(false);
       });
+
+    // cleanup
+    return () => {
+      console.log("UseEffect CleanUp");
+      controller.abort();
+    };
   }, []);
 
   return (
