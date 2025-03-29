@@ -36,5 +36,11 @@
 }
 
 .welcome-message{
-    margin: 100px 0;
+    margin: 150px 0;
+}
+
+.spinner{
+    margin: 19% 0;
+    height: 5rem;
+    width: 5rem;
 }
