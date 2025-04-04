@@ -1,0 +1,46 @@
+.app-container{
+    display: flex;
+}
+
+.content{
+    width: 100%;
+}
+
+.sidebar{
+    min-height: 800px;
+    width: 200px;
+}
+
+.post-card{
+    margin: 20px 50px;
+    width: 30rem;
+    background:#ecebdb;
+}
+
+.hashtag{
+    margin: 0px 3px;
+}
+
+.reaction{
+    margin: 15px 0 0 0;
+}
+
+.delete-btn{
+    cursor: pointer;
+}
+
+.create-post{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+.welcome-message{
+    margin: 150px 0;
+}
+
+.spinner{
+    margin: 19% 0;
+    height: 5rem;
+    width: 5rem;
+}
