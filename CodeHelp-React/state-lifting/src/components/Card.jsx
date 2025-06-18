@@ -10,6 +10,7 @@ const Card = (props) => {
         value={props.text}
         onChange={(e) => props.setText(e.target.value)}
       />
+      <p> My value is: {props.text}</p>
     </div>
   );
 };
