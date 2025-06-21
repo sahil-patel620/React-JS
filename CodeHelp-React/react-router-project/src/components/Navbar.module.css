@@ -1,0 +1,19 @@
+.activeLink{
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    background: #4e0303;
+    border-radius: 3px;
+
+}
+
+.listItems{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: beige;
+}
+
+.navLinks{
+        text-decoration: none;
+}
