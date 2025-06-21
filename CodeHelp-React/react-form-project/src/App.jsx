@@ -23,7 +23,7 @@ function App() {
           type="text"
           className={errors.firstName ? "input-error" : ""}
           {...register("firstName", {
-             required: { value: true, message: "Please enter first name" },
+            required: { value: true, message: "Please enter first name" },
             minLength: { value: 3, message: "Min Length atleast 3" },
             maxLength: { value: 10, message: "Max Length atmost 10" },
           })}
@@ -34,8 +34,8 @@ function App() {
       </div>
       <br />
       <div>
-        <label>Middle Name:</label>
-        <input type="text" {...register("middleName")} />
+        <label htmlFor="middleName">Middle Name:</label>
+        <input type="text" id="middleName" {...register("middleName")} />
       </div>
       <br />
       <div>
