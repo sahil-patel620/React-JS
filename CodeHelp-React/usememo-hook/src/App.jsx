@@ -16,6 +16,7 @@ function App() {
     return num * 2;
   }
 
+  // useMemo will memoise the calculated value , next time same operation krne pr, pahle wala value hi result kr dega without calculation kiye huye.
   const doubleValue = useMemo(() => expensiveTask(input), [input]);
 
   return (
